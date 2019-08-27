@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+var db = mongoose.connection;
 
-// var db = mongoose.connection;
 
-mongoose.connection.on('connected', function () {
+db.on('connected', function () {
     console.log(`Mongoose connected to: ${process.env.DATABASE_URL}`);
    });
    
