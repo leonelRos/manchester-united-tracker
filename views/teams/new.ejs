@@ -8,16 +8,24 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h2>Enter your info</h2>
+    <h2>Enter player info</h2>
     <form action="/teams" method="POST">
-        <label>Name:
-            <input type="text" name="name">
+        <label>Player Name:
+            <input type="text" name="playerName">
             </label><br>
-        <label>Enter Email: 
-            <input type="text" name="email">
+        <label>Position: 
+            <select name="position">
+                <option value="Goalkeeper">GK</option>
+                <option value="defense">DEF</option>
+                <option value="midfield">CAM</option>
+                <option value="attack">FW</option>
+            </select>
+            </label><br>
+        <label>Player age:
+            <input type="text" name="age">    
         </label><br>
-        <label>Favorite Player:
-            <input type="text" name="favPlayer">    
+        <label>pace:
+            <input type="text" name="pace">    
         </label><br>
         <input type="submit" value="enter">
     </form>

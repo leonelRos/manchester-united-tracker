@@ -2,7 +2,8 @@ var Team = require('../models/team');
 
 module.exports = {
     create,
-   new: newTeam
+   new: newTeam,
+   index
 }
 
 function create (req, res){
@@ -10,17 +11,14 @@ function create (req, res){
     team.save(function(err){
         if(err) return res.render('teams/new');
         console.log(team);
-        res.redirect('/teams/new');
+        res.redirect('/teams');
     })
 }
-// function index(req, res, next) {
-//     res.render('teams/index', {
-//         teams,
-//         user: req.user,
-//         name: req.query.name,
-//         sortkey
-//     })
-// }
+function index(req, res) {
+   Team.find({}, function(err, teams){
+       res.render('teams/index', {teams});
+    });
+}
 
 function newTeam (req, res) {
     res.render('teams/new');
