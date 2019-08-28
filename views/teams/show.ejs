@@ -11,4 +11,43 @@
     <div><%= team.pace %></div>
 </section>
 
+<br><h2>Players Comments</h2>
+<form id="comment-form" method="POST"
+  action="/teams/<%= team._id %>/comments">
+  <label>Comment:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="overalRat">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <input type="submit" value="Add Comment">
+</form>
+
+<% if (team.comments.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>comment:</th>
+                <th>overal:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% team.comments.forEach(function(c) { %>
+                <tr>
+                    <td><%= c.content %></td>
+                    <td><%= c.overalRat %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<% } %>
 <%- include('../partials/footer') %>
