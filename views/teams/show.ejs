@@ -17,7 +17,7 @@
   <label>Comment:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
-  <select name="overalRat">
+  <select name="overallRat">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -44,10 +44,13 @@
             <% team.comments.forEach(function(c) { %>
                 <tr>
                     <td><%= c.content %></td>
-                    <td><%= c.overalRat %></td>
+                    <td><%= c.overallRat %></td>
                 </tr>
             <% }); %>
         </tbody>
     </table>
+    <% } else { %>
+        <h5>No Comments </h5>
 <% } %>
+
 <%- include('../partials/footer') %>
