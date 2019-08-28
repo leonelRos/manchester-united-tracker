@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GGMU</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-    <h2>Manchester United</h2>
-    <table>
+<%- include('../partials/header') %>
+    <table id="list">
         <thead>
             <tr>
                 <th>Player name</th>
                 <th>position</th>
-                <th>age</th>
-                <th>pace</th>
+                <th>age</th>              
             </tr>
         </thead>
         <tbody>
@@ -24,10 +13,9 @@
                 <td><%= t.playerName %></td>
                 <td><%= t.position %></td>
                 <td><%= t.age %></td>
-                <td><%= t.pace %></td>
+                <td><a href="/teams/<%= t._id %>">Profile</a></td>
             </tr>
            <% }) %> 
         </tbody>
     </table>
-</body>
-</html>
+    <%- include('../partials/footer') %>

@@ -3,7 +3,13 @@ var Team = require('../models/team');
 module.exports = {
     create,
    new: newTeam,
-   index
+   index,
+   show
+}
+function show(req, res) {
+    Team.findById(req.params.id, function(err, team){
+        res.render('teams/show', {header: 'Player Profile', team})
+    });
 }
 
 function create (req, res){
@@ -16,10 +22,10 @@ function create (req, res){
 }
 function index(req, res) {
    Team.find({}, function(err, teams){
-       res.render('teams/index', {teams});
+       res.render('teams/index', {header: 'All Players', teams});
     });
 }
 
 function newTeam (req, res) {
-    res.render('teams/new');
+    res.render('teams/new', { header: 'Add Players' });
 }

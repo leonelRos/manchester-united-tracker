@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GGMU</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-    <h2>Enter player info</h2>
-    <form action="/teams" method="POST">
+<%- include('../partials/header') %>
+
+    <form id="new-form" action="/teams" method="POST">
         <label>Player Name:
             <input type="text" name="playerName">
             </label><br>
@@ -29,5 +20,5 @@
         </label><br>
         <input type="submit" value="enter">
     </form>
-</body>
-</html>
+
+<%- include('../partials/footer') %>

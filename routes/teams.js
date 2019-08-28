@@ -4,6 +4,7 @@ var teamsCtrl = require('../controllers/teams')
 
 /* GET users listing. */
 router.get('/', teamsCtrl.index);
+router.get('/:id', teamsCtrl.show);
 router.get('/new', teamsCtrl.new);
 router.post('/', teamsCtrl.create);
 // router.get('/new', function(req, res, next) {
