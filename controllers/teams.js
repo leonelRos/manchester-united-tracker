@@ -27,5 +27,5 @@ function index(req, res) {
 }
 
 function newTeam (req, res) {
-    res.render('teams/new', { header: 'Add Players' });
+    res.render('teams/new', {header: 'Add Players'});
 }
