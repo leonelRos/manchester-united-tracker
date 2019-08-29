@@ -1,11 +1,21 @@
 var Team = require('../models/team');
 
 module.exports = {
-    create,
+   create,
    new: newTeam,
    index,
-   show
+   show,
+   delete: deleteTeam
 }
+function deleteTeam(req, res, next) {
+    Team.findOne({'comments._id': req.params.id}, function(err, team) {
+        team.comments.id(req.params.id).remove();
+        team.save(function(err) {
+        res.render('teams/show', {header: 'Player Profile', team})
+        });
+    });
+}
+
 function show(req, res) {
     Team.findById(req.params.id, function(err, team){
         res.render('teams/show', {header: 'Player Profile', team})
@@ -21,8 +31,8 @@ function create (req, res){
     })
 }
 function index(req, res) {
-   Team.find({}, function(err, teams){
-       res.render('teams/index', {header: 'All Players', teams});
+    Team.find({}, function(err, teams){
+        res.render('teams/index', {header: 'All Players', teams});
     });
 }
 
