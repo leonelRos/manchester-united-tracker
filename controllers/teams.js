@@ -33,7 +33,7 @@ function create (req, res){
 }
 function index(req, res) {
     Team.find({}, function(err, teams){
-        res.render('teams/index', {header: 'All Players', teams, user: null});
+        res.render('teams/index', {header: 'All Players', teams, user: req.user});
     });
 }
 

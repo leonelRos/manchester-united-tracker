@@ -12,9 +12,11 @@ passport.use(new GoogleStrategy({
             if (user) {
                return cb(null, user);
             } else {
+                console.log("HITTING")
+                console.log(profile)
                 var newUser = new User({
-                  name: profile.name,
-                  email: profile.email[0].value,
+                  name: profile.name.givenName,
+                  email: profile.emails[0].value,
                   googleId: profile.id
                 });
                 newUser.save(function(err){
@@ -31,7 +33,7 @@ passport.serializeUser(function(user, done){
 });
 
 passport.deserializeUser(function(id, done){
-    Team.findById(id, function(err, team){
+    User.findById(id, function(err, user){
         done(null, user);
     });
 });
