@@ -9,6 +9,7 @@ module.exports = {
 }
 function deleteTeam(req, res, next) {
     Team.findOne({'comments._id': req.params.id}, function(err, team) {
+
         team.comments.id(req.params.id).remove();
         team.save(function(err) {
         res.render('teams/show', {header: 'Player Profile', team})
@@ -32,7 +33,7 @@ function create (req, res){
 }
 function index(req, res) {
     Team.find({}, function(err, teams){
-        res.render('teams/index', {header: 'All Players', teams});
+        res.render('teams/index', {header: 'All Players', teams, user: null});
     });
 }
 

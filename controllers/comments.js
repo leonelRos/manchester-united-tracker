@@ -1,7 +1,7 @@
 var Team = require('../models/team');
 
 module.exports = {
-    create
+    create,
 };
 
 function create(req, res) {
