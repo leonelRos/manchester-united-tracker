@@ -39,8 +39,7 @@ var teamSchema = new Schema({
         min: 10,
         max: 99
     },
-    comments: [commentSchema],
-    googleId: String,  
+    comments: [commentSchema]  
 }, {
    timestamps: true 
 });

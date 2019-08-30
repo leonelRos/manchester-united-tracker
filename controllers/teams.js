@@ -6,7 +6,17 @@ module.exports = {
    new: newTeam,
    index,
    show,
-   delete: deleteTeam
+   delete: deleteTeam,
+   update
+}
+function update(req, res) {
+    Team.findById(req.params.id, function(err, teams){
+        teams.playerName = req.body.newName;
+        teams.save(function(err){
+            if (err) return res.redirect('/teams');
+            res.redirect(`/teams/${req.params.id}`);
+        })
+    })
 }
 function deleteTeam(req, res, next) {
     Team.findOne({'comments._id': req.params.id}, function(err, team) {
