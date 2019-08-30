@@ -5,9 +5,140 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: lightskyblue;
+}
+h5 {
+  font-size: 24px;
 }
 img {
-  width: 400px;
-  height: 400px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  object-fit: contain;
+  margin-right: auto;
+}
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-table;
+}
+label {
+  font: 20px;
+  display: flow-root;
+}
+
+nav > a:hover {
+  color: yellow;
+  background-color: #721632;
+}
+nav > img {
+  width: 100px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 30px;
+  overflow-y: scroll;
+}
+table {
+  font-size: 20px;
+}
+
+
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+#new-form input[type="submit"] {
+  grid-column: span 2;
+  width: 10rem;
+  margin-left: auto;
+}
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+#new-form input[type="submit"],
+#comment-form input[type="submit"] {
+  width: 10rem;
+  grid-column: 2 / 3;
+}
+#new-form *, #comment-form * {
+  font-size: 22px;
+  padding: initial;
+  border-radius: 15px;
+}
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  font-size: 22px;
+}
+ul {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  align-content: center;
+}
+
+li {
+  display: flex;
+  justify-content: right;
+  
+  font-weight: bold;
+}
+#list td:nth-child(2), #list td:nth-child(3){
+  min-width: 100px;
+}
+
+#list a {
+  border-radius: 4px;
+  background-color: red;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.updatebutton {
+  width: 10rem;
+  border-radius: 4px;
+  background-color: red;
+  font-size: 20px;
+}
+#new-form input[type="submit"], #comment-form input[type="submit"] {
+  width: 10rem;
+  grid-column: 2 / 3;
+  background-color: red;
+  color: yellow;
+}
+.delbutton {
+  background-color: red;
+  color: yellow;
+  font-size: 21px;
+  border-radius: 13px;
+}
+.material-icons  {
+  align-items: center;
+}
+td > input{
+  background-color: #991a19;
+  border: none;
+  color: black;
+  border-color: white;
+
 }

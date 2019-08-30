@@ -15,8 +15,8 @@
                 <td><%= t.age %></td>
                 <td><a href="/teams/<%= t._id %>">Stats</a></td>
                 <form action="/teams/<%= t._id %>?_method=PUT" method="POST" class="secondary-content">
-                    <td>update name: <input type="text" name="newName"></td>
-                <td><button type="submit" class="delbutton">UPDATE</button></td>
+                    <td>Update Player name: <input type="text" name="newName"></td>
+                    <td><button type="submit" class="updatebutton">UPDATE</button></td>
             </form>
                
             </tr>
