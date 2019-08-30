@@ -4,6 +4,13 @@ The purpose of this web application is to keep track of Manchester United player
 
 ### OAuth
 
-![game on](https://Users/leosmac/Genaral-Assembly-proj/manchesterunited-tracker/manchesteruni-tracker/public/images/Screen Shot 2019-08-30 at 12.23.09 AM.png
+![game on](https://github.com/leonelRos/manchester-united-tracker/blob/master/public/images/pic1.png)
+
+
+
+
+
+
+
 
 
