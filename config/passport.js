@@ -15,7 +15,7 @@ passport.use(new GoogleStrategy({
                 console.log("HITTING")
                 console.log(profile)
                 var newUser = new User({
-                  name: profile.name.givenName,
+                  name: profile.displayName,
                   email: profile.emails[0].value,
                   googleId: profile.id
                 });

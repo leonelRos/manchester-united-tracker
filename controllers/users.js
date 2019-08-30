@@ -6,7 +6,7 @@ module.exports = {
 //var sortKey = req.query.sort || ‘name’;
 function index(req, res) {
  res.render('/index', {
-   //        users,
+        //   user,
    user: req.user,
    name: req.query.name
    //   sortKey
