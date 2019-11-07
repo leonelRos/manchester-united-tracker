@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Player name:</th>
+                <th>position:</th>
+                <th>age:</th>              
+            </tr>
+        </thead>
+        <tbody>
+           <% teams.forEach(function(t) { %>
+            <tr>
+                <td><%= t.playerName %></td>
+                <td><%= t.position %></td>
+                <td><%= t.age %></td>
+                <td><a href="/teams/<%= t._id %>">Stats</a></td>
+                <form action="/teams/<%= t._id %>?_method=PUT" method="POST" class="secondary-content">
+                    <td>Update Player name: <input type="text" name="newName"></td>
+                    <td><button type="submit" class="updatebutton">UPDATE NAME</button></td>
+            </form>
+               
+            </tr>
+           <% }) %> 
+        </tbody>
+    </table>
+    <%- include('../partials/footer') %>

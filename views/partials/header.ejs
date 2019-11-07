@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>GGMU</title>
+</head>
+<body>
+  <nav>
+    <img src="/images/manu.png">
+    <a href="/teams/new" <%- header === 'Add Players' ? 'class="active"' : '' %>>ADD PLAYERS</a>
+    <a href="/teams" <%- header === 'All Players' ? 'class="active"' : '' %>>ALL PLAYERS</a>
+    <ul class="right">
+        <li>
+        <% if (user) { %>
+          <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+        <% } else { %>
+          <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+        <% } %>
+        </li>
+      </ul>
+  </nav>
+  <main>
+    <h1><%= header %></h1>

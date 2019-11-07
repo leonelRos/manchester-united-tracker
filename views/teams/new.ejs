@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+    <form id="new-form" action="/teams" method="POST">
+        <label>Player Name:
+            <input type="text" name="playerName">
+        </label><br>
+        <label>Position: 
+            <select name="position">
+                <option value="Goalkeeper">GK</option>
+                <option value="defense">DEF</option>
+                <option value="midfield">CAM</option>
+                <option value="attack">FW</option>
+            </select>
+        </label><br>
+        <label>Player age:
+            <input type="text" name="age">    
+        </label><br>
+        <label>pace:
+            <input type="text" name="pace">    
+        </label><br>
+        <input type="submit" value="ENTER PLAYER">
+    </form>
+
+<%- include('../partials/footer') %>
